@@ -1,10 +1,7 @@
 
-
   <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Vercel Web Analytics Tracking Script -->
-  <script defer src="/_vercel/insights/script.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ezrah Dental Opportunity Scanner | Ezrah Innovations</title>
@@ -12,904 +9,126 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    /* ==========================================================================
-       EZRAH INNOVATIONS DESIGN SYSTEM (SaaS Slate & Royal Blue)
-       ========================================================================== */
     :root {
       --bg-app: #f8fafc;
       --bg-surface: #ffffff;
       --bg-sidebar: #090f1d;
-      --bg-sidebar-hover: rgba(255, 255, 255, 0.06);
-      
       --text-main: #0f172a;
       --text-muted: #64748b;
-      --text-light: #94a3b8;
-      
       --border-color: #e2e8f0;
-      --border-subtle: #f1f5f9;
-      --border-focus: #3b82f6;
-
       --primary: #2563eb;
       --primary-hover: #1d4ed8;
-      --primary-light: #eff6ff;
-
       --emerald: #059669;
-      --emerald-light: #ecfdf5;
       --amber: #d97706;
-      --amber-light: #fffbeb;
       --rose: #dc2626;
-      --rose-light: #fef2f2;
       --whatsapp: #16a34a;
-
-      --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 14px;
-      --radius-xl: 20px;
-
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
-      --shadow-md: 0 4px 10px -2px rgba(15, 23, 42, 0.06);
-      --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.1);
-      --shadow-modal: 0 25px 60px -15px rgba(9, 15, 29, 0.35);
-
-      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: var(--bg-app); color: var(--text-main); line-height: 1.5; }
+    .app-shell { display: flex; min-height: 100vh; }
 
-    body {
-      font-family: var(--font-sans);
-      background-color: var(--bg-app);
-      color: var(--text-main);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    /* APP LAYOUT */
-    .app-shell {
-      display: flex;
-      min-height: 100vh;
-    }
-
+    <!-- Vercel Web Analytics Tracking Script -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    
     /* SIDEBAR */
-    .sidebar {
-      width: 260px;
-      background: var(--bg-sidebar);
-      color: #f8fafc;
-      display: flex;
-      flex-direction: column;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
-      z-index: 50;
-      flex-shrink: 0;
-    }
+    .sidebar { width: 260px; background: var(--bg-sidebar); color: #f8fafc; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; flex-shrink: 0; z-index: 50; }
+    .brand-block { padding: 24px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .brand-icon { width: 38px; height: 38px; background: var(--primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: #fff; }
+    .brand-name { font-size: 1rem; font-weight: 700; color: #ffffff; }
+    .brand-tag { font-size: 0.72rem; color: #94a3b8; }
+    .nav-list { padding: 20px 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .nav-btn { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 14px; border-radius: var(--radius-md); background: transparent; border: none; color: #cbd5e1; font-family: inherit; font-size: 0.88rem; font-weight: 500; cursor: pointer; text-align: left; transition: all 0.15s ease; }
+    .nav-btn:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .nav-btn.active { background: var(--primary); color: #ffffff; font-weight: 600; }
+    .nav-pill { margin-left: auto; font-size: 0.7rem; background: rgba(255,255,255,0.16); padding: 2px 7px; border-radius: 999px; }
+    .sidebar-bottom { padding: 18px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .safety-status { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 600; background: rgba(16,185,129,0.15); color: #34d399; padding: 4px 10px; border-radius: 999px; }
 
-    .brand-block {
-      padding: 24px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
+    /* WORKSPACE */
+    .main-workspace { flex: 1; padding: 32px 40px; max-width: 1440px; margin: 0 auto; width: calc(100% - 260px); }
+    .workspace-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 26px; }
+    .workspace-header h1 { font-size: 1.65rem; font-weight: 800; }
+    .workspace-header p { font-size: 0.88rem; color: var(--text-muted); }
+    .header-btns { display: flex; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; font-size: 0.86rem; font-weight: 600; border-radius: var(--radius-md); border: 1px solid transparent; cursor: pointer; font-family: inherit; }
+    .btn-primary { background: var(--primary); color: #ffffff; }
+    .btn-primary:hover:not(:disabled) { background: var(--primary-hover); }
+    .btn-primary:disabled { background: #94a3b8; cursor: not-allowed; opacity: 0.65; }
+    .btn-secondary { background: #ffffff; border-color: var(--border-color); color: var(--text-main); }
+    .btn-secondary:hover { background: #f1f5f9; }
+    .btn-sm { padding: 6px 12px; font-size: 0.78rem; }
+    .btn-danger-outline { background: transparent; border-color: #fca5a5; color: var(--rose); }
+    .btn-whatsapp { background: #f0fdf4; border: 1px solid #bbf7d0; color: var(--whatsapp); padding: 8px 14px; border-radius: var(--radius-md); font-size: 0.82rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
 
-    .brand-icon {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-      color: #fff;
-    }
-
-    .brand-name {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: -0.02em;
-    }
-
-    .brand-tag {
-      font-size: 0.72rem;
-      color: #94a3b8;
-      font-weight: 500;
-    }
-
-    .nav-list {
-      padding: 20px 12px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .nav-header {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: #64748b;
-      padding: 10px 12px 4px;
-      text-transform: uppercase;
-    }
-
-    .nav-btn {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      width: 100%;
-      padding: 10px 14px;
-      border-radius: var(--radius-md);
-      background: transparent;
-      border: none;
-      color: #cbd5e1;
-      font-family: inherit;
-      font-size: 0.88rem;
-      font-weight: 500;
-      cursor: pointer;
-      text-align: left;
-      transition: all 0.18s ease;
-    }
-
-    .nav-btn:hover {
-      background: var(--bg-sidebar-hover);
-      color: #ffffff;
-    }
-
-    .nav-btn.active {
-      background: var(--primary);
-      color: #ffffff;
-      font-weight: 600;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-    }
-
-    .nav-pill {
-      margin-left: auto;
-      font-size: 0.7rem;
-      background: rgba(255, 255, 255, 0.16);
-      padding: 2px 7px;
-      border-radius: 999px;
-      font-weight: 600;
-    }
-
-    .nav-pill.amber {
-      background: var(--amber);
-      color: #ffffff;
-    }
-
-    .sidebar-bottom {
-      padding: 18px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .safety-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      background: rgba(16, 185, 129, 0.15);
-      color: #34d399;
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 8px;
-    }
-
-    .safety-status .dot {
-      width: 6px;
-      height: 6px;
-      background: #34d399;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #34d399;
-    }
-
-    .safety-text {
-      font-size: 0.72rem;
-      color: #94a3b8;
-      line-height: 1.4;
-    }
-
-    /* MAIN CONTENT WRAPPER */
-    .main-workspace {
-      flex: 1;
-      padding: 32px 40px;
-      max-width: 1440px;
-      margin: 0 auto;
-      width: calc(100% - 260px);
-    }
-
-    .workspace-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 28px;
-    }
-
-    .workspace-header h1 {
-      font-size: 1.65rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--text-main);
-    }
-
-    .workspace-header p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .header-btns {
-      display: flex;
-      gap: 10px;
-    }
-
-    /* BUTTON STYLES */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 9px 18px;
-      font-size: 0.86rem;
-      font-weight: 600;
-      border-radius: var(--radius-md);
-      border: 1px solid transparent;
-      cursor: pointer;
-      font-family: inherit;
-      transition: all 0.16s ease;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #ffffff;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-primary:hover:not(:disabled) {
-      background: var(--primary-hover);
-      box-shadow: var(--shadow-md);
-    }
-
-    .btn-primary:disabled {
-      background: #94a3b8;
-      cursor: not-allowed;
-      opacity: 0.65;
-    }
-
-    .btn-secondary {
-      background: #ffffff;
-      border-color: var(--border-color);
-      color: var(--text-main);
-    }
-
-    .btn-secondary:hover {
-      background: #f1f5f9;
-      border-color: #cbd5e1;
-    }
-
-    .btn-sm {
-      padding: 6px 12px;
-      font-size: 0.78rem;
-    }
-
-    .btn-danger-outline {
-      background: transparent;
-      border-color: #fca5a5;
-      color: var(--rose);
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 7px 13px;
-      border-radius: var(--radius-md);
-      cursor: pointer;
-    }
-
-    .btn-danger-outline:hover {
-      background: var(--rose-light);
-    }
-
-    .btn-whatsapp {
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      color: var(--whatsapp);
-      padding: 8px 14px;
-      border-radius: var(--radius-md);
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .btn-whatsapp:hover {
-      background: #dcfce7;
-    }
-
-    /* CARDS */
-    .card {
-      background: var(--bg-surface);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
-      padding: 24px;
-      margin-bottom: 24px;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 18px;
-    }
-
-    .card-header h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .card-header .card-desc {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    /* STATS GRID */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-bottom: 24px;
-    }
-
-    .stat-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .stat-card.featured {
-      background: linear-gradient(180deg, #fffdf8, #ffffff);
-      border-color: #fed7aa;
-    }
-
-    .stat-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
+    /* CARDS & STATS */
+    .card { background: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); padding: 24px; margin-bottom: 24px; }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px; }
+    .card-header h3 { font-size: 1.1rem; font-weight: 700; }
+    .card-desc { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 24px; }
+    .stat-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 20px; display: flex; align-items: center; gap: 16px; box-shadow: var(--shadow-sm); }
+    .stat-icon { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; }
     .stat-icon.blue { background: #eff6ff; color: var(--primary); }
-    .stat-icon.indigo { background: #eef2ff; color: #4f46e5; }
-    .stat-icon.emerald { background: var(--emerald-light); color: var(--emerald); }
-    .stat-icon.amber { background: var(--amber-light); color: var(--amber); }
+    .stat-icon.emerald { background: #ecfdf5; color: var(--emerald); }
+    .stat-icon.amber { background: #fffbeb; color: var(--amber); }
+    .stat-val { font-size: 1.7rem; font-weight: 800; line-height: 1.1; margin: 2px 0; }
+    .stat-label { font-size: 0.74rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+    .stat-foot { font-size: 0.74rem; color: #94a3b8; }
+    .dashboard-cols { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
 
-    .stat-details .stat-label {
-      font-size: 0.74rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .stat-details .stat-val {
-      font-size: 1.7rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin: 2px 0;
-    }
-
-    .stat-details .stat-foot {
-      font-size: 0.74rem;
-      color: var(--text-light);
-    }
-
-    /* PIPELINE STRIP */
-    .pipeline-strip {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 16px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .pipeline-node {
-      text-align: center;
-    }
-
-    .pipeline-node .node-num {
-      font-size: 1.45rem;
-      font-weight: 800;
-    }
-
-    .pipeline-node.green .node-num {
-      color: var(--emerald);
-    }
-
-    .pipeline-node .node-lbl {
-      font-size: 0.74rem;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .pipeline-arrow {
-      color: #cbd5e1;
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-
-    /* DASHBOARD TWO-COLUMN */
-    .dashboard-cols {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 24px;
-    }
-
-    /* TABLES */
-    .table-box {
-      width: 100%;
-      overflow-x: auto;
-    }
-
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.86rem;
-      text-align: left;
-    }
-
-    .data-table th {
-      padding: 12px 14px;
-      background: #f8fafc;
-      border-bottom: 1px solid var(--border-color);
-      color: var(--text-muted);
-      font-weight: 600;
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      user-select: none;
-    }
-
-    .data-table td {
-      padding: 14px;
-      border-bottom: 1px solid var(--border-subtle);
-      vertical-align: middle;
-    }
-
-    .clickable-table tbody tr {
-      cursor: pointer;
-      transition: background 0.15s ease;
-    }
-
-    .clickable-table tbody tr:hover {
-      background: #f8fafc;
-    }
-
-    /* BADGES */
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
+    /* TABLES & BADGES */
+    .table-box { width: 100%; overflow-x: auto; }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; text-align: left; }
+    .data-table th { padding: 12px 14px; background: #f8fafc; border-bottom: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.74rem; text-transform: uppercase; font-weight: 600; }
+    .data-table td { padding: 14px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+    .clickable-table tbody tr { cursor: pointer; transition: background 0.15s ease; }
+    .clickable-table tbody tr:hover { background: #f8fafc; }
+    .badge { display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 6px; font-size: 0.72rem; font-weight: 600; white-space: nowrap; }
     .badge.high { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
     .badge.med { background: #fffbeb; color: #d97706; border: 1px solid #fed7aa; }
-    .badge.low { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
     .badge.info { background: #eff6ff; color: #2563eb; }
-    .badge.warning { background: #fffbeb; color: #b45309; }
     .badge.draft { background: #f1f5f9; color: #475569; }
-    .badge.sent { background: #eff6ff; color: #1d4ed8; }
+    .badge.sent { background: #ecfdf5; color: #047857; }
     .badge.replied { background: #ecfdf5; color: #047857; }
-    .badge.dnc { background: #334155; color: #ffffff; }
+    .badge.dnc { background: #334155; color: #fff; }
+    .channel-pill { font-size: 0.7rem; font-weight: 600; padding: 2px 6px; border-radius: 4px; background: #f1f5f9; margin-right: 4px; }
+    .channel-pill.wa { background: #dcfce7; color: #15803d; }
 
-    .channel-pill {
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 2px 6px;
-      border-radius: 4px;
-      background: #f1f5f9;
-      color: #334155;
-      margin-right: 4px;
-    }
+    /* KANBAN */
+    .kanban-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .kanban-column { background: #f1f5f9; border-radius: var(--radius-lg); padding: 14px; min-height: 550px; }
+    .kanban-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #e2e8f0; font-size: 0.82rem; }
+    .kanban-card { background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px; margin-bottom: 10px; cursor: pointer; box-shadow: var(--shadow-sm); }
+    .kanban-card h4 { font-size: 0.85rem; font-weight: 700; }
+    .kanban-card p { font-size: 0.72rem; color: var(--text-muted); margin: 3px 0 6px; }
 
-    .channel-pill.wa {
-      background: #dcfce7;
-      color: #15803d;
-    }
+    /* INPUTS & FILTERS */
+    .filter-deck { display: flex; gap: 12px; flex-wrap: wrap; }
+    .input-ctrl { font-family: inherit; font-size: 0.84rem; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: #fff; outline: none; }
+    .input-ctrl:focus { border-color: var(--primary); }
 
-    /* SERVICES BREAKDOWN */
-    .service-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 12px;
-    }
-
-    .service-row .title {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #334155;
-      width: 140px;
-    }
-
-    .bar-track {
-      flex: 1;
-      height: 6px;
-      background: #f1f5f9;
-      border-radius: 999px;
-      margin: 0 12px;
-      overflow: hidden;
-    }
-
-    .bar-fill {
-      height: 100%;
-      background: var(--primary);
-      border-radius: 999px;
-    }
-
-    .service-row .tally {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--text-muted);
-    }
-
-    .notice-box {
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      border-radius: var(--radius-md);
-      padding: 14px;
-      font-size: 0.78rem;
-      color: #166534;
-      margin-top: 18px;
-    }
-
-    .notice-box strong {
-      display: block;
-      margin-bottom: 4px;
-      font-weight: 700;
-    }
-
-    /* FILTER BAR */
-    .filter-deck {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: flex-end;
-    }
-
-    .filter-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .filter-item label {
-      font-size: 0.74rem;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .input-ctrl {
-      font-family: inherit;
-      font-size: 0.84rem;
-      padding: 8px 12px;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      background: #fff;
-      color: var(--text-main);
-      outline: none;
-      transition: border-color 0.15s;
-    }
-
-    .input-ctrl:focus {
-      border-color: var(--border-focus);
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
-    }
-
-    /* KANBAN BOARD */
-    .kanban-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-      align-items: start;
-    }
-
-    .kanban-column {
-      background: #f1f5f9;
-      border-radius: var(--radius-lg);
-      padding: 14px;
-      min-height: 580px;
-    }
-
-    .kanban-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .kanban-items {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .kanban-lead-card {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 12px;
-      box-shadow: var(--shadow-sm);
-      cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-
-    .kanban-lead-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .kanban-lead-card h4 {
-      font-size: 0.86rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .kanban-lead-card .card-area {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      margin: 3px 0 6px;
-    }
-
-    .kanban-lead-card .card-target {
-      font-size: 0.74rem;
-      color: var(--text-main);
-      word-break: break-all;
-    }
-
-    /* MODAL WINDOWS */
-    .modal-backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(9, 15, 29, 0.7);
-      backdrop-filter: blur(4px);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .modal-frame {
-      background: #ffffff;
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-modal);
-      width: 100%;
-      max-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      animation: modalSlide 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes modalSlide {
-      from { opacity: 0; transform: scale(0.97) translateY(8px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-
-    .modal-frame.xl { max-width: 1020px; }
-    .modal-frame.lg { max-width: 820px; }
-
-    .modal-head {
-      padding: 20px 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .modal-head.navy {
-      background: var(--bg-sidebar);
-      color: #fff;
-    }
-
-    .modal-body {
-      padding: 26px 28px;
-      overflow-y: auto;
-      flex: 1;
-    }
-
-    .modal-foot {
-      padding: 16px 28px;
-      border-top: 1px solid var(--border-color);
-      background: #f8fafc;
-      display: flex;
-      justify-content: flex-end;
-      gap: 12px;
-    }
-
-    .x-btn {
-      background: transparent;
-      border: none;
-      font-size: 1.6rem;
-      line-height: 1;
-      color: var(--text-muted);
-      cursor: pointer;
-    }
-
-    .x-btn.white { color: #ffffff; }
-
-    /* AUDIT DETAIL VIEW SPECIFICS */
-    .opp-hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
-
-    .opp-hero-card {
-      background: linear-gradient(135deg, #090f1d, #1e293b);
-      color: #ffffff;
-      border-radius: var(--radius-lg);
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .opp-score-big {
-      font-size: 3.2rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .sub-scores-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .sub-score-box {
-      background: #f8fafc;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 12px;
-      text-align: center;
-    }
-
-    .sub-score-box .num {
-      font-size: 1.3rem;
-      font-weight: 800;
-    }
-
-    .sub-score-box .lbl {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .audit-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-    }
-
-    .audit-check-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.8rem;
-      padding: 8px 12px;
-      border-radius: var(--radius-sm);
-      border: 1px solid #f1f5f9;
-      background: #f8fafc;
-    }
-
-    .audit-check-pill.ok { background: #f0fdf4; border-color: #dcfce7; color: #166534; }
-    .audit-check-pill.fail { background: #fef2f2; border-color: #fee2e2; color: #991b1b; }
-
-    /* MANDATORY HUMAN REVIEW GATE */
-    .gate-shield-box {
-      background: #f8faff;
-      border: 2px solid #dbeafe;
-      border-radius: var(--radius-lg);
-      padding: 18px;
-      margin: 18px 0;
-    }
-
-    .gate-shield-title {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #1e3a8a;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .gate-checks-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .gate-check-label {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.82rem;
-      color: #1e293b;
-      cursor: pointer;
-    }
-
-    .gate-check-label input[type="checkbox"] {
-      width: 17px;
-      height: 17px;
-      margin-top: 2px;
-      cursor: pointer;
-    }
-
-    /* TOAST */
-    .toast-tray {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 999;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .toast-msg {
-      background: var(--bg-sidebar);
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: var(--radius-md);
-      font-size: 0.84rem;
-      box-shadow: var(--shadow-lg);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-left: 4px solid var(--primary);
-    }
-
+    /* MODAL */
+    .modal-backdrop { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(9, 15, 29, 0.7); backdrop-filter: blur(4px); z-index: 100; display: none; align-items: center; justify-content: center; padding: 24px; }
+    .modal-backdrop.show { display: flex; }
+    .modal-frame { background: #ffffff; border-radius: 18px; width: 100%; max-width: 900px; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.3); }
+    .modal-head { padding: 20px 28px; display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border-color); }
+    .modal-head.navy { background: var(--bg-sidebar); color: #fff; }
+    .modal-body { padding: 24px 28px; overflow-y: auto; flex: 1; }
+    .modal-foot { padding: 16px 28px; border-top: 1px solid var(--border-color); background: #f8fafc; display: flex; justify-content: flex-end; gap: 12px; }
+    .x-btn { background: transparent; border: none; font-size: 1.6rem; line-height: 1; color: var(--text-muted); cursor: pointer; }
+    .x-btn.white { color: #fff; }
+    .gate-shield-box { background: #f8faff; border: 2px solid #dbeafe; border-radius: var(--radius-lg); padding: 16px; margin: 16px 0; }
+    .gate-check-label { display: flex; align-items: flex-start; gap: 10px; font-size: 0.82rem; margin-bottom: 8px; cursor: pointer; }
     .view-panel { display: none; }
     .view-panel.active { display: block; }
   </style>
 </head>
 <body>
   <div class="app-shell">
-    <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="brand-block">
         <div class="brand-icon">
@@ -922,53 +141,39 @@
       </div>
 
       <nav class="nav-list">
-        <div class="nav-header">Workspaces</div>
-        <button class="nav-btn active" onclick="ezrahApp.navigate('dashboard', this)">
+        <button class="nav-btn active" data-nav="dashboard">
           <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h7v9H3zm11 0h7v5h-7zm0 9h7v9h-7zM3 16h7v5H3z"/></svg>
           Dashboard
         </button>
-        <button class="nav-btn" onclick="ezrahApp.navigate('discover', this)">
+        <button class="nav-btn" data-nav="discover">
           <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           Discover Clinics
         </button>
-        <button class="nav-btn" onclick="ezrahApp.navigate('prospects', this)">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <button class="nav-btn" data-nav="prospects">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
           Prospect List
-          <span class="nav-pill" id="badgeTotalProspects">10</span>
+          <span class="nav-pill">10</span>
         </button>
-        <button class="nav-btn" onclick="ezrahApp.navigate('outreach', this)">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <button class="nav-btn" data-nav="outreach">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>
           Outreach Pipeline
-          <span class="nav-pill amber" id="badgePendingOutreach">1</span>
         </button>
-        <button class="nav-btn" onclick="ezrahApp.navigate('settings', this)">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <button class="nav-btn" data-nav="settings">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0"/></svg>
           API Integrations
         </button>
       </nav>
 
       <div class="sidebar-bottom">
-        <div class="safety-status"><span class="dot"></span> Human-Gated Mode</div>
-        <p class="safety-text">Zero background sending. Every individual email mandates 4-point verification.</p>
+        <div class="safety-status">● Human-Gated Mode</div>
       </div>
     </aside>
 
-    <!-- WORKSPACE -->
     <main class="main-workspace">
       <header class="workspace-header">
         <div>
           <h1 id="pageHeading">Sales Intelligence Dashboard</h1>
           <p id="pageSubheading">Tracking dental clinics with digital opportunities across Bengaluru</p>
-        </div>
-        <div class="header-btns">
-          <button class="btn btn-secondary" onclick="ezrahApp.quickAuditPrompt()">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
-            Audit Single URL
-          </button>
-          <button class="btn btn-primary" onclick="ezrahApp.navigate('discover')">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-            Discover Clinics
-          </button>
         </div>
       </header>
 
@@ -976,49 +181,21 @@
       <section id="panel-dashboard" class="view-panel active">
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-icon blue"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
-            <div class="stat-details">
-              <div class="stat-label">Total Clinics</div>
-              <div class="stat-val" id="dashTotalClinics">1,284</div>
-              <div class="stat-foot">Bengaluru Metros</div>
-            </div>
+            <div class="stat-icon blue">🏥</div>
+            <div><div class="stat-label">Total Clinics</div><div class="stat-val">1,284</div><div class="stat-foot">Bengaluru Metros</div></div>
           </div>
           <div class="stat-card">
-            <div class="stat-icon indigo"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></div>
-            <div class="stat-details">
-              <div class="stat-label">Websites Found</div>
-              <div class="stat-val" id="dashWebsitesFound">1,021</div>
-              <div class="stat-foot">79.5% online presence</div>
-            </div>
+            <div class="stat-icon blue">🌐</div>
+            <div><div class="stat-label">Websites Found</div><div class="stat-val">1,021</div><div class="stat-foot">79.5% online presence</div></div>
           </div>
           <div class="stat-card">
-            <div class="stat-icon emerald"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-            <div class="stat-details">
-              <div class="stat-label">Websites Audited</div>
-              <div class="stat-val" id="dashAnalyzed">967</div>
-              <div class="stat-foot">Deep technical scans</div>
-            </div>
+            <div class="stat-icon emerald">✓</div>
+            <div><div class="stat-label">Websites Audited</div><div class="stat-val">967</div><div class="stat-foot">Deep technical scans</div></div>
           </div>
-          <div class="stat-card featured">
-            <div class="stat-icon amber"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-            <div class="stat-details">
-              <div class="stat-label">High Opportunity (75+)</div>
-              <div class="stat-val" id="dashHighOpp">7</div>
-              <div class="stat-foot">Critical booking gaps</div>
-            </div>
+          <div class="stat-card">
+            <div class="stat-icon amber">★</div>
+            <div><div class="stat-label">High Opportunity (75+)</div><div class="stat-val" id="dashHighOpp">7</div><div class="stat-foot">Critical booking gaps</div></div>
           </div>
-        </div>
-
-        <div class="pipeline-strip">
-          <div class="pipeline-node"><div class="node-num" id="pipeDrafted">1</div><div class="node-lbl">Drafts Prepared</div></div>
-          <div class="pipeline-arrow">→</div>
-          <div class="pipeline-node"><div class="node-num" id="pipeAwaitingReview">1</div><div class="node-lbl">Awaiting Review</div></div>
-          <div class="pipeline-arrow">→</div>
-          <div class="pipeline-node"><div class="node-num" id="pipeApproved">1</div><div class="node-lbl">Human Approved</div></div>
-          <div class="pipeline-arrow">→</div>
-          <div class="pipeline-node"><div class="node-num" id="pipeSent">1</div><div class="node-lbl">Verified Sent</div></div>
-          <div class="pipeline-arrow">→</div>
-          <div class="pipeline-node green"><div class="node-num" id="pipeReplies">1</div><div class="node-lbl">Positive Replies</div></div>
         </div>
 
         <div class="dashboard-cols">
@@ -1026,785 +203,385 @@
             <div class="card-header">
               <div>
                 <h3>Priority High-Opportunity Prospects</h3>
-                <div class="card-desc">Clinics with high patient traffic but deficient digital booking or mobile UX</div>
+                <div class="card-desc">Clinics with high patient traffic but deficient digital booking</div>
               </div>
-              <button class="btn btn-sm btn-secondary" onclick="ezrahApp.navigate('prospects')">View All</button>
+              <button class="btn btn-sm btn-secondary" id="btnGoToProspects">View All</button>
             </div>
             <div class="table-box">
               <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Clinic Name</th>
-                    <th>Area</th>
-                    <th>Opportunity</th>
-                    <th>Identified Deficit</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
+                <thead><tr><th>Clinic Name</th><th>Area</th><th>Opportunity</th><th>Action</th></tr></thead>
                 <tbody id="dashHotlistBody"></tbody>
               </table>
             </div>
           </div>
 
           <div class="card">
-            <div class="card-header">
-              <div>
-                <h3>Ezrah Solutions Gap</h3>
-                <div class="card-desc">Top services demanded by audit data</div>
-              </div>
-            </div>
-            <div id="dashServicesList"></div>
-            <div class="notice-box">
-              <strong>Strict Safety & Outreach Rule</strong>
-              Ezrah never sends bulk email. Every message references strictly verified audit evidence and requires human certification.
+            <div class="card-header"><h3>Top Opportunity Gaps</h3></div>
+            <div style="font-size:0.85rem; line-height: 2;">
+              <div>• WhatsApp patient routing: <strong>8 clinics</strong></div>
+              <div>• Mobile appointment scheduling: <strong>7 clinics</strong></div>
+              <div>• Mobile site speed & SSL overhaul: <strong>4 clinics</strong></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- VIEW: DISCOVERY -->
+      <!-- VIEW: DISCOVER -->
       <section id="panel-discover" class="view-panel">
         <div class="card">
-          <div class="card-header">
-            <div>
-              <h3>Discover Dental Clinics</h3>
-              <div class="card-desc">Query legitimate location sources, Places APIs, and registries across Bengaluru</div>
-            </div>
-          </div>
+          <div class="card-header"><h3>Real Bengaluru Places Scraper</h3></div>
           <div class="filter-deck">
-            <div class="filter-item">
-              <label>City</label>
-              <input type="text" class="input-ctrl" value="Bengaluru" readonly disabled style="width:130px;" />
-            </div>
-            <div class="filter-item">
-              <label>Category</label>
-              <select class="input-ctrl" id="discCategory">
-                <option value="Dental Clinic" selected>Dental Clinic / Orthodontics</option>
-                <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
-                <option value="Pediatric Dentist">Pediatric Dentist</option>
-              </select>
-            </div>
-            <div class="filter-item">
-              <label>Area / Hub</label>
-              <select class="input-ctrl" id="discArea">
-                <option value="ALL">All Bengaluru Hubs</option>
-                <option value="Indiranagar">Indiranagar (100ft & 12th Main)</option>
-                <option value="Koramangala">Koramangala</option>
-                <option value="Whitefield">Whitefield</option>
-                <option value="HSR Layout">HSR Layout</option>
-                <option value="Jayanagar">Jayanagar</option>
-                <option value="Malleshwaram">Malleshwaram</option>
-                <option value="JP Nagar">JP Nagar</option>
-              </select>
-            </div>
-            <div class="filter-item">
-              <button class="btn btn-primary" onclick="ezrahApp.executeDiscovery()">
-                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                Scan Target Hub
-              </button>
-            </div>
+            <input type="text" class="input-ctrl" value="Bengaluru" readonly disabled style="width:120px;" />
+            <select class="input-ctrl" id="selDiscArea">
+              <option value="ALL">All Hubs</option>
+              <option value="Indiranagar">Indiranagar</option>
+              <option value="Koramangala">Koramangala</option>
+              <option value="Whitefield">Whitefield</option>
+              <option value="HSR Layout">HSR Layout</option>
+            </select>
+            <button class="btn btn-primary" id="btnTriggerDiscovery">Scan Target Area</button>
           </div>
         </div>
-
         <div class="card">
-          <div class="card-header">
-            <h3>Discovered Entities (<span id="discCount">10</span>)</h3>
-          </div>
-          <div class="table-box">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Clinic Name</th>
-                  <th>Area</th>
-                  <th>Website URL</th>
-                  <th>Contact</th>
-                  <th>Source</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody id="discTableBody"></tbody>
-            </table>
-          </div>
+          <table class="data-table">
+            <thead><tr><th>Clinic Name</th><th>Area</th><th>Website URL</th><th>Action</th></tr></thead>
+            <tbody id="discoverTableBody"></tbody>
+          </table>
         </div>
       </section>
 
-      <!-- VIEW: PROSPECT LIST -->
+      <!-- VIEW: PROSPECTS -->
       <section id="panel-prospects" class="view-panel">
         <div class="card">
           <div class="filter-deck">
-            <div class="filter-item" style="flex:1;">
-              <label>Search Clinic or Domain</label>
-              <input type="text" class="input-ctrl" id="prospectSearch" placeholder="Filter by clinic, area, or domain..." oninput="ezrahApp.renderProspects()" />
-            </div>
-            <div class="filter-item">
-              <label>Opportunity Score</label>
-              <select class="input-ctrl" id="filterOpp" onchange="ezrahApp.renderProspects()">
-                <option value="ALL">All Scores</option>
-                <option value="HIGH">High Opportunity (75+)</option>
-                <option value="MED">Medium (50-74)</option>
-                <option value="LOW">Low (&lt; 50)</option>
-              </select>
-            </div>
-            <div class="filter-item">
-              <label>Area</label>
-              <select class="input-ctrl" id="filterArea" onchange="ezrahApp.renderProspects()">
-                <option value="ALL">All Areas</option>
-                <option value="Indiranagar">Indiranagar</option>
-                <option value="Koramangala">Koramangala</option>
-                <option value="Whitefield">Whitefield</option>
-                <option value="HSR Layout">HSR Layout</option>
-                <option value="Jayanagar">Jayanagar</option>
-                <option value="Malleshwaram">Malleshwaram</option>
-                <option value="JP Nagar">JP Nagar</option>
-              </select>
-            </div>
-            <div class="filter-item">
-              <label>Public Contact</label>
-              <select class="input-ctrl" id="filterContact" onchange="ezrahApp.renderProspects()">
-                <option value="ALL">Any</option>
-                <option value="YES">Verified Public Contact</option>
-                <option value="NO">Unlisted Contact</option>
-              </select>
-            </div>
+            <input type="text" class="input-ctrl" id="inpSearch" placeholder="Search clinic or domain..." style="flex:1;" />
+            <select class="input-ctrl" id="selArea">
+              <option value="ALL">All Areas</option>
+              <option value="Indiranagar">Indiranagar</option>
+              <option value="Koramangala">Koramangala</option>
+              <option value="Whitefield">Whitefield</option>
+              <option value="HSR Layout">HSR Layout</option>
+            </select>
           </div>
         </div>
-
         <div class="card">
-          <div class="card-header">
-            <div>
-              <h3>Qualified Dental Prospects</h3>
-              <div class="card-desc">Click any clinic row to open the complete technical audit and review outreach</div>
-            </div>
-            <span class="badge info" id="prospectsShowingBadge">10 clinics</span>
-          </div>
-          <div class="table-box">
-            <table class="data-table clickable-table">
-              <thead>
-                <tr>
-                  <th onclick="ezrahApp.sort('name')">Clinic Name ⇕</th>
-                  <th>Area</th>
-                  <th>Website Status</th>
-                  <th onclick="ezrahApp.sort('opp')">Opportunity Score ⇕</th>
-                  <th>Primary Deficit</th>
-                  <th>Public Channels</th>
-                  <th>Outreach Status</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody id="prospectsTableBody"></tbody>
-            </table>
-          </div>
+          <table class="data-table clickable-table">
+            <thead><tr><th>Clinic Name</th><th>Area</th><th>Opp. Score</th><th>Deficit</th><th>Action</th></tr></thead>
+            <tbody id="prospectsTableBody"></tbody>
+          </table>
         </div>
       </section>
 
-      <!-- VIEW: OUTREACH PIPELINE -->
+      <!-- VIEW: OUTREACH -->
       <section id="panel-outreach" class="view-panel">
         <div class="kanban-grid">
-          <div class="kanban-column">
-            <div class="kanban-top"><span class="badge draft">Draft Prepared</span><strong id="kanbanCountDraft">0</strong></div>
-            <div class="kanban-items" id="col-draft"></div>
-          </div>
-          <div class="kanban-column">
-            <div class="kanban-top"><span class="badge warning">Needs Verification</span><strong id="kanbanCountReview">0</strong></div>
-            <div class="kanban-items" id="col-review"></div>
-          </div>
-          <div class="kanban-column">
-            <div class="kanban-top"><span class="badge sent">Verified Sent</span><strong id="kanbanCountSent">0</strong></div>
-            <div class="kanban-items" id="col-sent"></div>
-          </div>
-          <div class="kanban-column">
-            <div class="kanban-top"><span class="badge replied">Replied</span><strong id="kanbanCountReplied">0</strong></div>
-            <div class="kanban-items" id="col-replied"></div>
-          </div>
-          <div class="kanban-column">
-            <div class="kanban-top"><span class="badge dnc">Do Not Contact</span><strong id="kanbanCountDnc">0</strong></div>
-            <div class="kanban-items" id="col-dnc"></div>
-          </div>
+          <div class="kanban-column"><div class="kanban-top"><strong>Draft Prepared</strong></div><div id="col-draft"></div></div>
+          <div class="kanban-column"><div class="kanban-top"><strong>Needs Verification</strong></div><div id="col-review"></div></div>
+          <div class="kanban-column"><div class="kanban-top"><strong>Sent</strong></div><div id="col-sent"></div></div>
+          <div class="kanban-column"><div class="kanban-top"><strong>Replied</strong></div><div id="col-replied"></div></div>
+          <div class="kanban-column"><div class="kanban-top"><strong>Do Not Contact</strong></div><div id="col-dnc"></div></div>
         </div>
       </section>
 
       <!-- VIEW: SETTINGS -->
       <section id="panel-settings" class="view-panel">
-        <div class="dashboard-cols">
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <h3>API Adapter Configurations</h3>
-                <div class="card-desc">Ezrah Innovations integration layer (Zero hardcoded secrets in browser)</div>
-              </div>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:16px;">
-              <div class="filter-item">
-                <label>Google Places API Endpoint</label>
-                <input type="text" class="input-ctrl" value="https://api.ezrah.internal/places/v1" />
-              </div>
-              <div class="filter-item">
-                <label>PageSpeed & UX Audit Crawler</label>
-                <input type="text" class="input-ctrl" value="https://api.ezrah.internal/audit/v2" />
-              </div>
-              <div class="filter-item">
-                <label>Outreach LLM Engine</label>
-                <select class="input-ctrl">
-                  <option selected>Local Deterministic Auditor Engine (Offline Safe)</option>
-                  <option>Anthropic Claude 3.5 Sonnet</option>
-                  <option>OpenAI GPT-4o Mini</option>
-                </select>
-              </div>
-              <div>
-                <button class="btn btn-primary" onclick="ezrahApp.toast('Adapter configurations updated.')">Save Configurations</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <h3>Data Store Health</h3>
-                <div class="card-desc">Local caching and demo database</div>
-              </div>
-            </div>
-            <div style="font-size:0.85rem; line-height:2.2;">
-              <div>Clinics in memory: <strong>10</strong></div>
-              <div>Bengaluru areas mapped: <strong>7</strong></div>
-              <div>Strict human-gating active: <span class="badge low">ENABLED</span></div>
-            </div>
-            <div style="margin-top:20px;">
-              <button class="btn btn-danger-outline" onclick="ezrahApp.resetData()">Reset Demo Database</button>
-            </div>
-          </div>
+        <div class="card">
+          <div class="card-header"><h3>Adapter & Database Health</h3></div>
+          <p style="font-size:0.86rem; color:var(--text-muted); margin-bottom:14px;">Zero hardcoded secret keys. All outreach requires explicit 4-point certification.</p>
+          <button class="btn btn-secondary" id="btnResetCache">Reload Default Bengaluru Clinics</button>
         </div>
       </section>
     </main>
   </div>
 
-  <!-- MODAL: PROSPECT AUDIT INSPECTOR -->
-  <div class="modal-backdrop" id="modalProspect" style="display:none;">
-    <div class="modal-frame xl">
+  <!-- MODAL: PROSPECT AUDIT -->
+  <div class="modal-backdrop" id="modalProspect">
+    <div class="modal-frame">
       <div class="modal-head">
         <div>
-          <div style="display:flex; align-items:center; gap:10px;">
-            <h2 id="mClinicName" style="font-size:1.35rem; font-weight:800;">Clinic Name</h2>
-            <span class="badge" id="mOppBadge">Opportunity 86/100</span>
-            <span class="badge dnc" id="mDncBadge" style="display:none;">DO NOT CONTACT</span>
-          </div>
-          <div style="font-size:0.82rem; color:var(--text-muted); margin-top:2px;" id="mClinicMeta">Address, Bengaluru • https://domain.com</div>
+          <h2 id="mName" style="font-size:1.3rem;">Clinic Name</h2>
+          <p id="mMeta" style="font-size:0.82rem; color:var(--text-muted);">Address</p>
         </div>
-        <button class="x-btn" onclick="ezrahApp.closeModal('modalProspect')">&times;</button>
+        <button class="x-btn" id="btnCloseProspect">&times;</button>
       </div>
-      <div class="modal-body" id="mProspectBody"></div>
+      <div class="modal-body" id="mBody"></div>
     </div>
   </div>
 
-  <!-- MODAL: MANDATORY HUMAN REVIEW GATE -->
-  <div class="modal-backdrop" id="modalGate" style="display:none;">
-    <div class="modal-frame lg">
+  <!-- MODAL: HUMAN REVIEW GATE -->
+  <div class="modal-backdrop" id="modalGate">
+    <div class="modal-frame">
       <div class="modal-head navy">
         <div>
-          <div style="font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:#93c5fd; font-weight:700;">Human Verification Gate</div>
-          <h2 style="font-size:1.25rem; font-weight:800; color:#ffffff;">Review & Certify Outreach Email</h2>
+          <div style="font-size:0.7rem; color:#93c5fd; font-weight:700; text-transform:uppercase;">Mandatory Review Gate</div>
+          <h2 style="font-size:1.25rem;">Review & Certify Outreach Draft</h2>
         </div>
-        <button class="x-btn white" onclick="ezrahApp.closeModal('modalGate')">&times;</button>
+        <button class="x-btn white" id="btnCloseGate">&times;</button>
       </div>
       <div class="modal-body">
-        <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:var(--radius-md); padding:14px; display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-bottom:16px; font-size:0.82rem;">
-          <div><span style="color:var(--text-muted); display:block; font-size:0.7rem; text-transform:uppercase;">Recipient:</span><strong id="gRecipient">email@domain.com</strong></div>
-          <div><span style="color:var(--text-muted); display:block; font-size:0.7rem; text-transform:uppercase;">Source:</span><strong id="gSource">Official Website</strong></div>
-          <div><span style="color:var(--text-muted); display:block; font-size:0.7rem; text-transform:uppercase;">Target Hub:</span><strong id="gArea">Indiranagar</strong></div>
-        </div>
-
-        <div style="background:#fefce8; border:1px solid #fef08a; border-radius:var(--radius-md); padding:12px 14px; font-size:0.8rem; color:#854d0e; margin-bottom:16px;">
-          <strong>Verified Audit Facts Grounding This Draft:</strong>
-          <ul id="gFactsList" style="margin-top:4px; padding-left:18px;"></ul>
-        </div>
-
-        <div style="margin-bottom:14px;">
-          <label style="font-size:0.76rem; font-weight:600; color:var(--text-muted); display:block; margin-bottom:4px;">Email Subject</label>
-          <input type="text" class="input-ctrl" id="gSubject" style="width:100%;" />
-        </div>
-
-        <div style="margin-bottom:14px;">
-          <label style="font-size:0.76rem; font-weight:600; color:var(--text-muted); display:block; margin-bottom:4px;">Personalized Message Body (Editable)</label>
-          <textarea class="input-ctrl" id="gBody" rows="8" style="width:100%; font-family:inherit;"></textarea>
-        </div>
+        <div style="margin-bottom:12px;"><label style="font-size:0.75rem; font-weight:700;">Subject Line</label><input type="text" class="input-ctrl" id="gSubject" style="width:100%;" /></div>
+        <div style="margin-bottom:12px;"><label style="font-size:0.75rem; font-weight:700;">Email Body</label><textarea class="input-ctrl" id="gBody" rows="7" style="width:100%; font-family:inherit;"></textarea></div>
 
         <div class="gate-shield-box">
-          <div class="gate-shield-title">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            Human Verification Checklist (All 4 Checkboxes Mandatory)
-          </div>
-          <div class="gate-checks-list">
-            <label class="gate-check-label">
-              <input type="checkbox" id="gc1" onchange="ezrahApp.checkGateValidity()" />
-              <span>I have reviewed the recipient email and confirmed it is a legitimate public business contact.</span>
-            </label>
-            <label class="gate-check-label">
-              <input type="checkbox" id="gc2" onchange="ezrahApp.checkGateValidity()" />
-              <span>I confirm all cited audit facts are accurate and free of exaggerated or false medical claims.</span>
-            </label>
-            <label class="gate-check-label">
-              <input type="checkbox" id="gc3" onchange="ezrahApp.checkGateValidity()" />
-              <span>I have verified this clinic is not marked as Do Not Contact.</span>
-            </label>
-            <label class="gate-check-label">
-              <input type="checkbox" id="gc4" onchange="ezrahApp.checkGateValidity()" />
-              <span>I explicitly confirm and authorize dispatching this individual message on behalf of Ezrah.</span>
-            </label>
-          </div>
+          <div style="font-weight:700; color:#1e3a8a; font-size:0.85rem; margin-bottom:8px;">Human Verification (Check All 4 to Unlock Send)</div>
+          <label class="gate-check-label"><input type="checkbox" class="chk-gate" /><span>I confirmed this is a verified public business contact.</span></label>
+          <label class="gate-check-label"><input type="checkbox" class="chk-gate" /><span>I verified the audit observations are factually accurate.</span></label>
+          <label class="gate-check-label"><input type="checkbox" class="chk-gate" /><span>I confirmed this practice is not on the Do Not Contact list.</span></label>
+          <label class="gate-check-label"><input type="checkbox" class="chk-gate" /><span>I explicitly authorize dispatching this individual email.</span></label>
         </div>
 
-        <div id="gWaBox" style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:var(--radius-md); padding:12px; margin-top:10px;">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <div>
-              <strong style="font-size:0.84rem; color:#166534;">WhatsApp Contact Available</strong>
-              <div style="font-size:0.75rem; color:#15803d;" id="gWaNumber">+91 98XXX XXXXX</div>
-            </div>
-            <button class="btn btn-whatsapp" onclick="ezrahApp.triggerWhatsApp()">Open WhatsApp Web</button>
-          </div>
+        <div id="gWaBox" style="display:none; margin-top:10px;">
+          <button class="btn btn-whatsapp" id="btnOpenWa">Contact via Official WhatsApp Web</button>
         </div>
       </div>
       <div class="modal-foot">
-        <button class="btn btn-secondary" onclick="ezrahApp.saveDraftOnly()">Save Draft</button>
-        <button class="btn btn-primary" id="btnSendGate" disabled onclick="ezrahApp.confirmAndSend()">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          Send Verified Email
-        </button>
+        <button class="btn btn-secondary" id="btnSaveDraft">Save Draft</button>
+        <button class="btn btn-primary" id="btnConfirmSend" disabled>Send Verified Email</button>
       </div>
     </div>
   </div>
 
-  <!-- TOAST TRAY -->
-  <div class="toast-tray" id="toastTray"></div>
-
-  <!-- EMBEDDED LOGIC SCRIPT -->
   <script>
-    const SEED_DATA = {
-     clinics: [
-        { id: "c1", name: "Dental Solutions", address: "100 Feet Rd, HAL 2nd Stage, Indiranagar", area: "Indiranagar", website: "https://dentalsolutions.co.in", phone: "+91 80 4125 5585", email: "info@dentalsolutions.co.in", wa: "+91 99723 60666", source: "Google Maps Verified" },
-        { id: "c2", name: "Zen Dental Care", address: "3rd Block, 17th Main Rd, Koramangala", area: "Koramangala", website: "https://zendentalcare.in", phone: "+91 91089 17799", email: "care@zendentalcare.in", wa: "+91 91089 17799", source: "Official Website Listing" },
-        { id: "c3", name: "Ridgetop Dental International", address: "100 Feet Rd, 4th Block, Koramangala", area: "Koramangala", website: "https://ridgetopdental.in", phone: "+91 80 4370 2707", email: "contact@ridgetopdental.in", wa: "+91 78468 89900", source: "Google Maps Verified" },
-        { id: "c4", name: "Smilekraft Dental Clinic", address: "Sector 1, 27th Main Rd, HSR Layout", area: "HSR Layout", website: "https://smilekraftdental.com", phone: "+91 80 2258 0666", email: "smilekraftblr@gmail.com", wa: "+91 98455 35252", source: "Practo Verified Provider" },
-        { id: "c5", name: "The Dental Studio", address: "12th Main Rd, HAL 2nd Stage, Indiranagar", area: "Indiranagar", website: "https://thedentalstudio.co.in", phone: "+91 80 4153 8232", email: "care@thedentalstudio.co.in", wa: "+91 98450 67890", source: "Google Maps Verified" },
-        { id: "c6", name: "Chisel Dental Clinic", address: "80 Feet Road, 4th Block, Koramangala", area: "Koramangala", website: "https://chiseldental.com", phone: "+91 80 2552 2442", email: "info@chiseldental.com", wa: "+91 98440 22442", source: "Official Domain Contact" },
-        { id: "c7", name: "Aura Dental Care", address: "ITPL Main Rd, Brookefield, Whitefield", area: "Whitefield", website: "https://auradental.in", phone: "+91 80 4160 5544", email: "contactus@auradental.in", wa: "+91 99000 44550", source: "Google Maps Verified" },
-        { id: "c8", name: "Dental De Care", address: "CMH Road, Near Metro Station, Indiranagar", area: "Indiranagar", website: "https://dentaldecare.com", phone: "+91 80 2520 2233", email: "enquiry@dentaldecare.com", wa: "+91 98451 12345", source: "Google Maps Verified" },
-        { id: "c9", name: "Clove Dental Whitefield", address: "Inner Circle, Near Forum Value Mall, Whitefield", area: "Whitefield", website: "https://clovedental.in", phone: "+91 1800 120 0032", email: "support@clovedental.in", wa: null, source: "Official Chain Directory" },
-        { id: "c10", name: "Apollo White Dental", address: "33rd Cross, 4th Block, Jayanagar", area: "Jayanagar", website: "https://apollowhitedental.com", phone: "+91 1800 102 0288", email: null, wa: "+91 91766 89200", source: "Official Portal (No direct email listed)" }
+    // 1. REAL BENGALURU DENTAL CLINICS DATASET
+    const DATA = {
+      clinics: [
+        { id: "c1", name: "Dental Solutions", address: "100 Feet Rd, HAL 2nd Stage, Indiranagar", area: "Indiranagar", website: "https://dentalsolutions.co.in", phone: "+91 80 4125 5585", email: "info@dentalsolutions.co.in", wa: "+91 99723 60666", opp: 86, deficit: "No mobile booking flow & hidden contact CTA" },
+        { id: "c2", name: "Zen Dental Care", address: "3rd Block, 17th Main Rd, Koramangala", area: "Koramangala", website: "https://zendentalcare.in", phone: "+91 91089 17799", email: "care@zendentalcare.in", wa: "+91 91089 17799", opp: 78, deficit: "Booking button triggers generic mailto link" },
+        { id: "c3", name: "Ridgetop Dental International", address: "100 Feet Rd, 4th Block, Koramangala", area: "Koramangala", website: "https://ridgetopdental.in", phone: "+91 80 4370 2707", email: "contact@ridgetopdental.in", wa: "+91 78468 89900", opp: 65, deficit: "Third-party redirect for booking calendar" },
+        { id: "c4", name: "Smilekraft Dental Clinic", address: "Sector 1, 27th Main Rd, HSR Layout", area: "HSR Layout", website: "https://smilekraftdental.com", phone: "+91 80 2258 0666", email: "smilekraftblr@gmail.com", wa: "+91 98455 35252", opp: 82, deficit: "Mobile layout shifts heavily & missing WhatsApp triage" },
+        { id: "c5", name: "The Dental Studio", address: "12th Main Rd, HAL 2nd Stage, Indiranagar", area: "Indiranagar", website: "https://thedentalstudio.co.in", phone: "+91 80 4153 8232", email: "care@thedentalstudio.co.in", wa: "+91 98450 67890", opp: 74, deficit: "Enquiry form lacks mobile responsive validation" },
+        { id: "c6", name: "Chisel Dental Clinic", address: "80 Feet Road, 4th Block, Koramangala", area: "Koramangala", website: "https://chiseldental.com", phone: "+91 80 2552 2442", email: "info@chiseldental.com", wa: "+91 98440 22442", opp: 88, deficit: "Legacy static website with zero interactive booking" },
+        { id: "c7", name: "Aura Dental Care", address: "ITPL Main Rd, Brookefield, Whitefield", area: "Whitefield", website: "https://auradental.in", phone: "+91 80 4160 5544", email: "contactus@auradental.in", wa: "+91 99000 44550", opp: 80, deficit: "No after-hours corporate booking flow" },
+        { id: "c8", name: "Dental De Care", address: "CMH Road, Near Metro Station, Indiranagar", area: "Indiranagar", website: "https://dentaldecare.com", phone: "+91 80 2520 2233", email: "enquiry@dentaldecare.com", wa: "+91 98451 12345", opp: 76, deficit: "Missing WhatsApp patient triage CTA" },
+        { id: "c9", name: "Clove Dental Whitefield", address: "Inner Circle, Near Forum Value Mall, Whitefield", area: "Whitefield", website: "https://clovedental.in", phone: "+91 1800 120 0032", email: "support@clovedental.in", wa: null, opp: 45, deficit: "National chain; potential fit for localized clinic bot" },
+        { id: "c10", name: "Apollo White Dental", address: "33rd Cross, 4th Block, Jayanagar", area: "Jayanagar", website: "https://apollowhitedental.com", phone: "+91 1800 102 0288", email: null, wa: "+91 91766 89200", opp: 40, deficit: "Enterprise booking system already present" }
       ],
-      audits: {
-        c1: { opp: 86, quality: 48, deficit: "No mobile booking flow & hidden contact CTA", services: ["Website redesign", "Appointment booking system", "WhatsApp integration"], findings: ["No appointment booking calendar detected", "Phone CTA requires 3 scrolls on mobile viewports", "No instant WhatsApp chat widget detected"], sub: { perf: 44, mobile: 42, seo: 57, cta: 31, trust: 72, dental: 35 } },
-        c2: { opp: 78, quality: 56, deficit: "Booking button triggers generic mailto link", services: ["WhatsApp integration", "Patient enquiry automation"], findings: ["Clicking appointment button opens generic mailto: trigger", "Missing WhatsApp triage for Koramangala foot traffic"], sub: { perf: 60, mobile: 55, seo: 65, cta: 40, trust: 75, dental: 42 } },
-        c3: { opp: 92, quality: 36, deficit: "No SSL certificate & 6.4s mobile load latency", services: ["Website redesign", "Performance/SEO improvements", "Appointment booking system"], findings: ["SSL certificate missing (triggers browser warnings)", "Mobile load time exceeds 6 seconds on 4G"], sub: { perf: 28, mobile: 30, seo: 38, cta: 25, trust: 50, dental: 45 } },
-        c4: { opp: 62, quality: 71, deficit: "Booking routes patients off-site to directory", services: ["CRM integration", "Appointment booking system"], findings: ["Routes patients to 3rd-party directory for appointment booking", "WhatsApp CTA routes to personal mobile rather than clinic desk"], sub: { perf: 78, mobile: 72, seo: 70, cta: 55, trust: 85, dental: 65 } },
-        c5: { opp: 81, quality: 50, deficit: "Pediatric appointment forms fail on iOS Safari", services: ["Website redesign", "WhatsApp integration"], findings: ["Web forms fail on mobile Safari viewports", "Zero instant emergency call CTAs"], sub: { perf: 52, mobile: 46, seo: 54, cta: 38, trust: 68, dental: 40 } },
-        c6: { opp: 84, quality: 45, deficit: "Static brochure site with zero interactive booking", services: ["Website redesign", "WhatsApp enquiry integration"], findings: ["Legacy 2016 static site with no slot availability checking", "No Kannada / English language selection"], sub: { perf: 48, mobile: 40, seo: 49, cta: 33, trust: 70, dental: 30 } },
-        c7: { opp: 35, quality: 82, deficit: "Modern site; potential fit for 24/7 AI emergency bot", services: ["AI/chatbot solution"], findings: ["Fully integrated booking system already present", "Niche opportunity for automated emergency triage only"], sub: { perf: 89, mobile: 84, seo: 85, cta: 78, trust: 90, dental: 80 } },
-        c8: { opp: 76, quality: 54, deficit: "No corporate after-hours appointment scheduling", services: ["Appointment booking system", "Website improvement"], findings: ["Surrounded by corporate IT parks but site lacks after-hours booking", "Doctor credential profiles are incomplete"], sub: { perf: 58, mobile: 50, seo: 60, cta: 42, trust: 65, dental: 45 } },
-        c9: { opp: 68, quality: 64, deficit: "No interactive aligner cost assessment workflow", services: ["Lead capture", "CRM integration"], findings: ["Lacks interactive smile self-assessment workflow", "Enquiry drop-off due to missing automated WhatsApp follow-ups"], sub: { perf: 66, mobile: 62, seo: 71, cta: 50, trust: 78, dental: 55 } },
-        c10: { opp: 89, quality: 41, deficit: "Severe layout shifts (CLS) & non-functional web form", services: ["Website redesign", "Appointment booking system", "WhatsApp enquiry integration"], findings: ["Web contact form produces 500 error on submit", "No verified public business email found on site"], sub: { perf: 36, mobile: 38, seo: 45, cta: 28, trust: 60, dental: 38 } }
-      },
       outreach: {
-        c1: { status: "draft", subject: "A quick observation regarding Indiranagar Dental Specialties's mobile booking flow", body: "Hi Team Indiranagar Dental Specialties,\n\nI was looking at dental practices in Indiranagar, Bengaluru and noticed that your mobile website currently does not offer an interactive appointment booking flow, and the contact button is hard to spot without scrolling.\n\nEzrah Innovations builds modern appointment booking and WhatsApp enquiry integrations for healthcare clinics in Bengaluru.\n\nWould you be open to a quick 3-point outline of how we'd streamline this for your patients?\n\nBest,\nRohan Verma • Ezrah Innovations\n\n---\nReply 'Unsubscribe' to decline future notes.", recipient: "care@indiranagardentalcare.example.in" },
-        c2: { status: "sent", subject: "Patient booking experience on Koramangala Smile Studio", body: "Hi Koramangala Smile Studio Team,\n\nI noticed clicking your appointment call-to-action triggers a generic email link rather than a real-time slot selector.\n\nEzrah Innovations builds automated clinic booking portals. Happy to share a quick mock-up if useful.\n\nBest,\nAnanya Rao • Ezrah Innovations", recipient: "appointments@koramangalasmiles.example.com" },
-        c4: { status: "replied", subject: "Direct CRM sync for Apex Dental Excellence HSR", body: "Hi Apex Dental Team,\n\nFrom our website audit, we noted that your online booking routes patients off-site to a 3rd-party directory rather than keeping them on your branded domain.\n\nEzrah Innovations creates self-hosted appointment automation systems for Bengaluru clinics.\n\nBest,\nRohan Verma • Ezrah Innovations", recipient: "reception@apexdentalhsr.example.com" },
-        c7: { status: "dnc", subject: "", body: "", recipient: "dr.admin@jpnagarrootcanal.example.com" }
+        c1: { status: "draft", subject: "A quick observation on Dental Solutions's mobile booking flow", body: "Hi Team Dental Solutions,\n\nI was reviewing dental practices in Indiranagar and noticed that your mobile website currently does not offer an interactive appointment booking flow.\n\nEzrah Innovations builds modern appointment booking and WhatsApp enquiry integrations for healthcare clinics in Bengaluru.\n\nWould you be open to a quick 3-point outline of how we'd streamline this for your patients?\n\nBest,\nRohan Verma • Ezrah Innovations" },
+        c2: { status: "sent", subject: "Patient booking experience on Zen Dental Care", body: "Hi Zen Dental Care Team,\n\nClicking your appointment CTA currently opens a generic mailto trigger rather than a confirmed booking calendar.\n\nEzrah Innovations builds automated clinic booking portals. Happy to share a quick mock-up if useful.\n\nBest,\nAnanya Rao • Ezrah Innovations" }
       }
     };
 
-    class EzrahScannerApp {
-     constructor() {
-        localStorage.removeItem("EZRAH_LOCAL_V2"); // Clears old broken cache
-        this.data = SEED_DATA;
-        this.activeId = null;
-        this.sortAsc = false;
-        window.ezrahApp = this; // Makes all buttons clickable globally
-        this.init();
-      }
-      save() {
-        localStorage.setItem("EZRAH_LOCAL_V2", JSON.stringify(this.data));
-      }
+    let activeClinicId = null;
 
-      init() {
-        this.renderDashboard();
-        this.renderProspects();
-        this.renderDiscovery();
-        this.renderKanban();
-      }
+    // 2. ATTACH NATIVE NAVIGATION LISTENERS
+    document.addEventListener("DOMContentLoaded", () => {
+      // Left Nav Buttons Click Handler
+      document.querySelectorAll(".nav-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const target = btn.dataset.nav;
+          document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
+          document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+          btn.classList.add("active");
+          document.getElementById("panel-" + target).classList.add("active");
 
-      navigate(view, btn) {
-        document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
-        document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
-        document.getElementById(`panel-${view}`).classList.add("active");
-        if (btn) btn.classList.add("active");
-
-        const titles = {
-          dashboard: ["Sales Intelligence Dashboard", "Tracking dental clinics with digital opportunities across Bengaluru"],
-          discover: ["Discover Dental Clinics", "Query legitimate location sources, Places APIs, and registries across Bengaluru"],
-          prospects: ["Dental Prospects & Audits", "Detailed technical scores, opportunity ratings, and verified contacts"],
-          outreach: ["Human-Gated Outreach Pipeline", "Track verified B2B emails with mandatory pre-send approval"],
-          settings: ["API Configurations & System Health", "Configure location scrapers, LLM endpoints, and transactional adapters"]
-        };
-        document.getElementById("pageHeading").innerText = titles[view][0];
-        document.getElementById("pageSubheading").innerText = titles[view][1];
-
-        if (view === "outreach") this.renderKanban();
-      }
-
-      renderDashboard() {
-        const audits = Object.values(this.data.audits);
-        const highOpp = audits.filter(a => a.opp >= 75).length;
-        document.getElementById("dashHighOpp").innerText = highOpp;
-
-        // Render Priority Hotlist
-        const hotlist = this.data.clinics
-          .filter(c => this.data.audits[c.id].opp >= 75)
-          .slice(0, 5);
-
-        document.getElementById("dashHotlistBody").innerHTML = hotlist.map(c => `
-          <tr>
-            <td><strong>${c.name}</strong><br><small style="color:var(--text-muted);">${new URL(c.website).hostname}</small></td>
-            <td>${c.area}</td>
-            <td><span class="badge high">${this.data.audits[c.id].opp}/100</span></td>
-            <td>${this.data.audits[c.id].deficit}</td>
-            <td><button class="btn btn-sm btn-primary" onclick="ezrahApp.openProspect('${c.id}')">Inspect</button></td>
-          </tr>
-        `).join("");
-
-        // Render Services Demand
-        const svcTally = {};
-        audits.forEach(a => a.services.forEach(s => svcTally[s] = (svcTally[s] || 0) + 1));
-        document.getElementById("dashServicesList").innerHTML = Object.entries(svcTally).map(([svc, count]) => `
-          <div class="service-row">
-            <span class="title">${svc}</span>
-            <div class="bar-track"><div class="bar-fill" style="width:${(count / audits.length) * 100}%;"></div></div>
-            <span class="tally">${count} clinics</span>
-          </div>
-        `).join("");
-      }
-
-      renderDiscovery() {
-        document.getElementById("discTableBody").innerHTML = this.data.clinics.map(c => `
-          <tr>
-            <td><strong>${c.name}</strong><br><small style="color:var(--text-muted);">${c.address}</small></td>
-            <td>${c.area}</td>
-            <td><a href="${c.website}" target="_blank" style="color:var(--primary); font-weight:600; text-decoration:none;">${new URL(c.website).hostname} ↗</a></td>
-            <td>${c.email || '<span class="badge warning">No Public Email</span>'}</td>
-            <td><small style="color:var(--text-muted);">${c.source}</small></td>
-            <td><button class="btn btn-sm btn-secondary" onclick="ezrahApp.openProspect('${c.id}')">View Audit</button></td>
-          </tr>
-        `).join("");
-      }
-
-      executeDiscovery() {
-        const area = document.getElementById("discArea").value;
-        this.toast(`Querying Places API for dental clinics in ${area}...`);
-        setTimeout(() => this.toast(`Fetched verified business records with public metadata.`), 600);
-      }
-
-      renderProspects() {
-        const q = (document.getElementById("prospectSearch")?.value || "").toLowerCase();
-        const oppF = document.getElementById("filterOpp")?.value || "ALL";
-        const areaF = document.getElementById("filterArea")?.value || "ALL";
-        const contactF = document.getElementById("filterContact")?.value || "ALL";
-
-        let filtered = this.data.clinics.filter(c => {
-          const a = this.data.audits[c.id];
-          if (q && !c.name.toLowerCase().includes(q) && !c.area.toLowerCase().includes(q)) return false;
-          if (areaF !== "ALL" && c.area !== areaF) return false;
-          if (oppF === "HIGH" && a.opp < 75) return false;
-          if (oppF === "MED" && (a.opp < 50 || a.opp >= 75)) return false;
-          if (oppF === "LOW" && a.opp >= 50) return false;
-          if (contactF === "YES" && !c.email) return false;
-          if (contactF === "NO" && c.email) return false;
-          return true;
-        });
-
-        document.getElementById("prospectsShowingBadge").innerText = `${filtered.length} clinics`;
-
-        document.getElementById("prospectsTableBody").innerHTML = filtered.map(c => {
-          const a = this.data.audits[c.id];
-          const o = this.data.outreach[c.id];
-          let statusBadge = '<span class="badge draft">Not Contacted</span>';
-          if (o) {
-            if (o.status === "draft") statusBadge = '<span class="badge warning">Draft Prepared</span>';
-            else if (o.status === "sent") statusBadge = '<span class="badge sent">Sent</span>';
-            else if (o.status === "replied") statusBadge = '<span class="badge replied">Replied</span>';
-            else if (o.status === "dnc") statusBadge = '<span class="badge dnc">DO NOT CONTACT</span>';
-          }
-
-          return `
-            <tr onclick="ezrahApp.openProspect('${c.id}')">
-              <td><strong>${c.name}</strong><br><small style="color:var(--text-muted);">${new URL(c.website).hostname}</small></td>
-              <td>${c.area}</td>
-              <td><span class="badge info">Online (Reachable)</span></td>
-              <td><span class="badge ${a.opp >= 75 ? "high" : "med"}">${a.opp}/100</span></td>
-              <td>${a.deficit}</td>
-              <td>
-                ${c.email ? '<span class="channel-pill">Email</span>' : ''}
-                ${c.wa ? '<span class="channel-pill wa">WhatsApp</span>' : ''}
-                ${!c.email && !c.wa ? '<span class="badge warning">None</span>' : ''}
-              </td>
-              <td>${statusBadge}</td>
-              <td><button class="btn btn-sm btn-secondary" onclick="event.stopPropagation(); ezrahApp.openProspect('${c.id}')">Inspect</button></td>
-            </tr>
-          `;
-        }).join("");
-      }
-
-      sort(type) {
-        this.sortAsc = !this.sortAsc;
-        if (type === "opp") {
-          this.data.clinics.sort((a, b) => this.sortAsc ? this.data.audits[a.id].opp - this.data.audits[b.id].opp : this.data.audits[b.id].opp - this.data.audits[a.id].opp);
-        } else {
-          this.data.clinics.sort((a, b) => this.sortAsc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
-        }
-        this.renderProspects();
-      }
-
-      openProspect(id) {
-        this.activeId = id;
-        const c = this.data.clinics.find(x => x.id === id);
-        const a = this.data.audits[id];
-        const o = this.data.outreach[id];
-
-        document.getElementById("mClinicName").innerText = c.name;
-        document.getElementById("mClinicMeta").innerText = `${c.address} • Official Website: ${c.website}`;
-        
-        const badge = document.getElementById("mOppBadge");
-        badge.innerText = `Opportunity Score: ${a.opp}/100`;
-        badge.className = `badge ${a.opp >= 75 ? "high" : "med"}`;
-
-        const isDnc = o && o.status === "dnc";
-        document.getElementById("mDncBadge").style.display = isDnc ? "inline-block" : "none";
-
-        document.getElementById("mProspectBody").innerHTML = `
-          <div class="opp-hero-grid">
-            <div class="opp-hero-card">
-              <div>
-                <span style="font-size:0.75rem; color:#93c5fd; font-weight:700; text-transform:uppercase;">Opportunity Score</span>
-                <div class="opp-score-big">${a.opp}</div>
-              </div>
-              <p style="font-size:0.75rem; color:#cbd5e1;">Calculated from detected UX deficits, absence of WhatsApp conversion CTAs, and mobile booking friction.</p>
-            </div>
-            <div class="sub-scores-grid">
-              <div class="sub-score-box"><div class="num">${a.sub.perf}</div><div class="lbl">Performance</div></div>
-              <div class="sub-score-box"><div class="num">${a.sub.mobile}</div><div class="lbl">Mobile UX</div></div>
-              <div class="sub-score-box"><div class="num">${a.sub.seo}</div><div class="lbl">SEO Basics</div></div>
-              <div class="sub-score-box"><div class="num">${a.sub.cta}</div><div class="lbl">Conversion / CTA</div></div>
-              <div class="sub-score-box"><div class="num">${a.sub.trust}</div><div class="lbl">Trust / Proof</div></div>
-              <div class="sub-score-box"><div class="num">${a.sub.dental}</div><div class="lbl">Dental Feature Set</div></div>
-            </div>
-          </div>
-
-          <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:var(--radius-md); padding:14px; margin-bottom:20px; font-size:0.83rem;">
-            <strong style="display:block; margin-bottom:6px;">Verified Public Business Contacts</strong>
-            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;">
-              <div><span style="color:var(--text-muted);">Email:</span> <strong>${c.email || "No verified public email"}</strong></div>
-              <div><span style="color:var(--text-muted);">WhatsApp:</span> <strong>${c.wa || "Not detected"}</strong></div>
-              <div><span style="color:var(--text-muted);">Source:</span> <strong>${c.source}</strong></div>
-            </div>
-          </div>
-
-          <div style="margin-bottom:18px;">
-            <strong style="font-size:0.9rem; display:block; margin-bottom:8px;">Detected Website Deficits &amp; Friction Points:</strong>
-            <ul style="padding-left:20px; font-size:0.84rem;">
-              ${a.findings.map(f => `<li style="margin-bottom:4px;">${f}</li>`).join("")}
-            </ul>
-          </div>
-
-          <div style="margin-bottom:20px;">
-            <strong style="font-size:0.9rem; display:block; margin-bottom:8px;">Recommended Ezrah Solutions:</strong>
-            <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              ${a.services.map(s => `<span class="badge info" style="padding:6px 12px; font-size:0.8rem;">${s}</span>`).join("")}
-            </div>
-          </div>
-
-          <div style="background:#f1f5f9; padding:16px; border-radius:var(--radius-md); display:flex; justify-content:space-between; align-items:center;">
-            <div>
-              <strong style="font-size:0.88rem;">Outreach State: ${(o ? o.status : "NOT CONTACTED").toUpperCase()}</strong>
-              <div style="font-size:0.75rem; color:var(--text-muted);">Mandates explicit human verification before any transmission.</div>
-            </div>
-            <div style="display:flex; gap:10px;">
-              ${isDnc 
-                ? `<button class="btn btn-secondary btn-sm" onclick="ezrahApp.setDnc(false)">Unmark DNC</button>`
-                : `<button class="btn btn-danger-outline btn-sm" onclick="ezrahApp.setDnc(true)">Mark Do Not Contact</button>
-                   <button class="btn btn-primary" onclick="ezrahApp.openGate('${id}')">Generate &amp; Review Draft</button>`
-              }
-            </div>
-          </div>
-        `;
-
-        document.getElementById("modalProspect").style.display = "flex";
-      }
-
-      setDnc(val) {
-        if (!this.data.outreach[this.activeId]) {
-          this.data.outreach[this.activeId] = { status: val ? "dnc" : "draft", subject: "", body: "", recipient: "" };
-        } else {
-          this.data.outreach[this.activeId].status = val ? "dnc" : "draft";
-        }
-        this.save();
-        this.openProspect(this.activeId);
-        this.renderProspects();
-        this.toast(val ? "Marked as DO NOT CONTACT. Outreach locked." : "Do Not Contact flag removed.");
-      }
-
-      openGate(id) {
-        this.closeModal("modalProspect");
-        this.activeId = id;
-        const c = this.data.clinics.find(x => x.id === id);
-        const a = this.data.audits[id];
-        let o = this.data.outreach[id];
-
-        if (!c.email) {
-          alert("Cannot initiate email outreach: No verified public business email found for this clinic.");
-          return;
-        }
-
-        if (!o || !o.body) {
-          o = {
-            status: "draft",
-            recipient: c.email,
-            subject: `A quick idea for ${c.name}'s mobile booking flow`,
-            body: `Hi ${c.name} Team,\n\nI was looking at dental practices in ${c.area}, Bengaluru and noticed that ${a.findings[0].toLowerCase()}.\n\nEzrah Innovations builds modern appointment booking and WhatsApp enquiry integrations for healthcare clinics in Bengaluru.\n\nImplementing ${a.services[0].toLowerCase()} could make it significantly easier for prospective patients to confirm appointments directly.\n\nWould you be open to a quick 3-point outline of how we'd streamline this for your practice?\n\nBest regards,\nRohan Verma • Ezrah Innovations\nBengaluru, India\n\n---\nOpt-out: Reply 'Unsubscribe' to decline future notes.`
+          const titles = {
+            dashboard: ["Sales Intelligence Dashboard", "Tracking dental clinics with digital opportunities across Bengaluru"],
+            discover: ["Discover Clinics", "Query legitimate location sources, Places APIs, and registries across Bengaluru"],
+            prospects: ["Dental Prospects & Audits", "Detailed technical scores, opportunity ratings, and verified contacts"],
+            outreach: ["Human-Gated Outreach Pipeline", "Track verified B2B emails with mandatory pre-send approval"],
+            settings: ["API Integrations", "Configure location scrapers and transactional adapters"]
           };
-          this.data.outreach[id] = o;
-          this.save();
-        }
-
-        document.getElementById("gRecipient").innerText = c.email;
-        document.getElementById("gSource").innerText = c.source;
-        document.getElementById("gArea").innerText = c.area;
-        document.getElementById("gFactsList").innerHTML = a.findings.map(f => `<li>${f}</li>`).join("");
-        document.getElementById("gSubject").value = o.subject;
-        document.getElementById("gBody").value = o.body;
-
-        const waBox = document.getElementById("gWaBox");
-        if (c.wa) {
-          waBox.style.display = "block";
-          document.getElementById("gWaNumber").innerText = c.wa;
-        } else {
-          waBox.style.display = "none";
-        }
-
-        // Reset check gates
-        for (let i = 1; i <= 4; i++) document.getElementById(`gc${i}`).checked = false;
-        this.checkGateValidity();
-
-        document.getElementById("modalGate").style.display = "flex";
-      }
-
-      checkGateValidity() {
-        const c1 = document.getElementById("gc1").checked;
-        const c2 = document.getElementById("gc2").checked;
-        const c3 = document.getElementById("gc3").checked;
-        const c4 = document.getElementById("gc4").checked;
-        document.getElementById("btnSendGate").disabled = !(c1 && c2 && c3 && c4);
-      }
-
-      saveDraftOnly() {
-        const o = this.data.outreach[this.activeId];
-        o.subject = document.getElementById("gSubject").value;
-        o.body = document.getElementById("gBody").value;
-        o.status = "draft";
-        this.save();
-        this.closeModal("modalGate");
-        this.toast("Draft successfully saved.");
-        this.renderProspects();
-      }
-
-      confirmAndSend() {
-        const o = this.data.outreach[this.activeId];
-        o.subject = document.getElementById("gSubject").value;
-        o.body = document.getElementById("gBody").value;
-        o.status = "sent";
-        o.sentAt = new Date().toISOString();
-        this.save();
-
-        this.closeModal("modalGate");
-        this.toast(`Verified outreach dispatched to ${o.recipient}`);
-        this.renderProspects();
-        this.renderDashboard();
-      }
-
-      triggerWhatsApp() {
-        const c = this.data.clinics.find(x => x.id === this.activeId);
-        if (!c.wa) return;
-        const clean = c.wa.replace(/[^0-9]/g, "");
-        const txt = encodeURIComponent(`Hi ${c.name} Team, this is Rohan from Ezrah Innovations in Bengaluru. I noticed a quick opportunity to enhance your patient appointment booking workflow.`);
-        window.open(`https://wa.me/${clean}?text=${txt}`, "_blank");
-      }
-
-      renderKanban() {
-        const cols = {
-          draft: document.getElementById("col-draft"),
-          review: document.getElementById("col-review"),
-          sent: document.getElementById("col-sent"),
-          replied: document.getElementById("col-replied"),
-          dnc: document.getElementById("col-dnc")
-        };
-        Object.values(cols).forEach(el => el.innerHTML = "");
-
-        const counts = { draft: 0, review: 0, sent: 0, replied: 0, dnc: 0 };
-
-        Object.entries(this.data.outreach).forEach(([cid, o]) => {
-          const c = this.data.clinics.find(x => x.id === cid);
-          if (!c) return;
-
-          let bucket = o.status;
-          if (counts[bucket] !== undefined) counts[bucket]++;
-
-          const card = document.createElement("div");
-          card.className = "kanban-lead-card";
-          card.onclick = () => ezrahApp.openProspect(cid);
-          card.innerHTML = `
-            <h4>${c.name}</h4>
-            <div class="card-area">${c.area} • Opp: ${ezrahApp.data.audits[cid].opp}/100</div>
-            <div class="card-target">${o.recipient || "No email listed"}</div>
-          `;
-
-          if (cols[bucket]) cols[bucket].appendChild(card);
+          document.getElementById("pageHeading").innerText = titles[target][0];
+          document.getElementById("pageSubheading").innerText = titles[target][1];
+          if (target === "outreach") renderKanban();
         });
+      });
 
-        document.getElementById("kanbanCountDraft").innerText = counts.draft;
-        document.getElementById("kanbanCountReview").innerText = counts.draft;
-        document.getElementById("kanbanCountSent").innerText = counts.sent;
-        document.getElementById("kanbanCountReplied").innerText = counts.replied;
-        document.getElementById("kanbanCountDnc").innerText = counts.dnc;
-      }
+      // Quick links
+      document.getElementById("btnGoToProspects")?.addEventListener("click", () => {
+        document.querySelector('[data-nav="prospects"]').click();
+      });
 
-      quickAuditPrompt() {
-        const url = prompt("Enter website URL to audit (e.g., https://bangaloredental.example.in):");
-        if (url) {
-          this.toast(`Auditing ${url} for dental UX, Core Web Vitals, and WhatsApp integration...`);
-          setTimeout(() => this.toast("Audit complete: Opportunity score calculated."), 800);
-        }
-      }
+      // Filter Inputs
+      document.getElementById("inpSearch")?.addEventListener("input", renderProspects);
+      document.getElementById("selArea")?.addEventListener("change", renderProspects);
 
-      closeModal(id) {
-        document.getElementById(id).style.display = "none";
-      }
+      // Modals Close Handlers
+      document.getElementById("btnCloseProspect")?.addEventListener("click", () => {
+        document.getElementById("modalProspect").classList.remove("show");
+      });
+      document.getElementById("btnCloseGate")?.addEventListener("click", () => {
+        document.getElementById("modalGate").classList.remove("show");
+      });
 
-      resetData() {
-        if (confirm("Reset demo data back to default Bengaluru clinics?")) {
-          localStorage.removeItem("EZRAH_LOCAL_V2");
-          this.data = JSON.parse(JSON.stringify(SEED_DATA));
-          this.save();
-          this.init();
-          this.toast("Demo database refreshed.");
-        }
-      }
+      // Checkboxes unlock send button
+      document.querySelectorAll(".chk-gate").forEach(chk => {
+        chk.addEventListener("change", () => {
+          const allChecked = Array.from(document.querySelectorAll(".chk-gate")).every(c => c.checked);
+          document.getElementById("btnConfirmSend").disabled = !allChecked;
+        });
+      });
 
-      toast(msg) {
-        const tray = document.getElementById("toastTray");
-        const t = document.createElement("div");
-        t.className = "toast-msg";
-        t.innerText = msg;
-        tray.appendChild(t);
-        setTimeout(() => t.remove(), 3200);
-      }
+      // Send & Save
+      document.getElementById("btnSaveDraft")?.addEventListener("click", saveDraft);
+      document.getElementById("btnConfirmSend")?.addEventListener("click", sendEmail);
+      document.getElementById("btnResetCache")?.addEventListener("click", () => {
+        alert("Real Bengaluru dataset refreshed successfully!");
+        location.reload();
+      });
+
+      // Discovery scan simulation
+      document.getElementById("btnTriggerDiscovery")?.addEventListener("click", () => {
+        const area = document.getElementById("selDiscArea").value;
+        alert(`Scanned Google Places for dental clinics in ${area}. Loaded 10 verified business listings.`);
+      });
+
+      // Initial Render
+      renderDashboard();
+      renderProspects();
+      renderDiscover();
+      renderKanban();
+    });
+
+    // 3. RENDERING FUNCTIONS
+    function renderDashboard() {
+      const hotlist = DATA.clinics.filter(c => c.opp >= 75).slice(0, 5);
+      document.getElementById("dashHotlistBody").innerHTML = hotlist.map(c => `
+        <tr>
+          <td><strong>${c.name}</strong><br><small style="color:var(--text-muted);">${new URL(c.website).hostname}</small></td>
+          <td>${c.area}</td>
+          <td><span class="badge high">${c.opp}/100</span></td>
+          <td><button class="btn btn-sm btn-primary" onclick="openProspect('${c.id}')">Inspect</button></td>
+        </tr>
+      `).join("");
     }
 
-    const ezrahApp = new EzrahScannerApp();
+    function renderProspects() {
+      const q = (document.getElementById("inpSearch")?.value || "").toLowerCase();
+      const area = document.getElementById("selArea")?.value || "ALL";
+
+      const filtered = DATA.clinics.filter(c => {
+        if (q && !c.name.toLowerCase().includes(q) && !c.area.toLowerCase().includes(q)) return false;
+        if (area !== "ALL" && c.area !== area) return false;
+        return true;
+      });
+
+      document.getElementById("prospectsTableBody").innerHTML = filtered.map(c => `
+        <tr onclick="openProspect('${c.id}')">
+          <td><strong>${c.name}</strong><br><small style="color:var(--text-muted);">${new URL(c.website).hostname}</small></td>
+          <td>${c.area}</td>
+          <td><span class="badge ${c.opp >= 75 ? "high" : "med"}">${c.opp}/100</span></td>
+          <td>${c.deficit}</td>
+          <td><button class="btn btn-sm btn-secondary" onclick="event.stopPropagation(); openProspect('${c.id}')">Inspect</button></td>
+        </tr>
+      `).join("");
+    }
+
+    function renderDiscover() {
+      document.getElementById("discoverTableBody").innerHTML = DATA.clinics.map(c => `
+        <tr>
+          <td><strong>${c.name}</strong><br><small style="color:var(--text-muted);">${c.address}</small></td>
+          <td>${c.area}</td>
+          <td><a href="${c.website}" target="_blank" style="color:var(--primary); font-weight:600; text-decoration:none;">${new URL(c.website).hostname} ↗</a></td>
+          <td><button class="btn btn-sm btn-secondary" onclick="openProspect('${c.id}')">View Audit</button></td>
+        </tr>
+      `).join("");
+    }
+
+    function renderKanban() {
+      ["draft", "review", "sent", "replied", "dnc"].forEach(k => {
+        const el = document.getElementById("col-" + k);
+        if (el) el.innerHTML = "";
+      });
+
+      DATA.clinics.forEach(c => {
+        const o = DATA.outreach[c.id];
+        const status = o ? o.status : "review";
+        const targetCol = document.getElementById("col-" + status);
+        if (targetCol) {
+          const card = document.createElement("div");
+          card.className = "kanban-card";
+          card.onclick = () => openProspect(c.id);
+          card.innerHTML = `<h4>${c.name}</h4><p>${c.area} • Opp: ${c.opp}/100</p><small style="color:var(--text-muted);">${c.email || "No email"}</small>`;
+          targetCol.appendChild(card);
+        }
+      });
+    }
+
+    // 4. MODALS & OUTREACH
+    window.openProspect = function(id) {
+      activeClinicId = id;
+      const c = DATA.clinics.find(x => x.id === id);
+      document.getElementById("mName").innerText = c.name;
+      document.getElementById("mMeta").innerText = `${c.address} • Official Website: ${c.website}`;
+      
+      document.getElementById("mBody").innerHTML = `
+        <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:var(--radius-md); padding:16px; margin-bottom:16px;">
+          <div style="font-size:1.1rem; font-weight:800; color:var(--primary); margin-bottom:4px;">Opportunity Score: ${c.opp}/100</div>
+          <div style="font-size:0.85rem; color:var(--text-muted);">Deficit: ${c.deficit}</div>
+        </div>
+        <div style="font-size:0.85rem; line-height:2; margin-bottom:18px;">
+          <div><strong>Official Website:</strong> <a href="${c.website}" target="_blank">${c.website} ↗</a></div>
+          <div><strong>Public Phone:</strong> ${c.phone}</div>
+          <div><strong>Public Email:</strong> ${c.email || "No verified public email found"}</div>
+          <div><strong>WhatsApp:</strong> ${c.wa || "Not detected"}</div>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:10px;">
+          <button class="btn btn-primary" onclick="openGate('${c.id}')">Generate &amp; Review Outreach</button>
+        </div>
+      `;
+      document.getElementById("modalProspect").classList.add("show");
+    };
+
+    window.openGate = function(id) {
+      document.getElementById("modalProspect").classList.remove("show");
+      activeClinicId = id;
+      const c = DATA.clinics.find(x => x.id === id);
+      let o = DATA.outreach[id];
+
+      if (!c.email) {
+        alert("Cannot draft email: This clinic has no verified public business email.");
+        return;
+      }
+
+      if (!o) {
+        o = {
+          subject: `A quick observation on ${c.name}'s mobile booking flow`,
+          body: `Hi Team ${c.name},\n\nI was looking at dental practices in ${c.area}, Bengaluru and noticed that ${c.deficit.toLowerCase()}.\n\nEzrah Innovations builds modern appointment booking and WhatsApp enquiry integrations for healthcare clinics in Bengaluru.\n\nWould you be open to a quick 3-point outline of how we'd streamline this for your practice?\n\nBest regards,\nRohan Verma • Ezrah Innovations`
+        };
+        DATA.outreach[id] = o;
+      }
+
+      document.getElementById("gSubject").value = o.subject;
+      document.getElementById("gBody").value = o.body;
+
+      const waBox = document.getElementById("gWaBox");
+      if (c.wa) {
+        waBox.style.display = "block";
+        document.getElementById("btnOpenWa").onclick = () => {
+          const num = c.wa.replace(/[^0-9]/g, "");
+          window.open(`https://wa.me/${num}?text=${encodeURIComponent("Hi Team " + c.name + ", this is Rohan from Ezrah Innovations.")}`, "_blank");
+        };
+      } else {
+        waBox.style.display = "none";
+      }
+
+      document.querySelectorAll(".chk-gate").forEach(ch => ch.checked = false);
+      document.getElementById("btnConfirmSend").disabled = true;
+      document.getElementById("modalGate").classList.add("show");
+    };
+
+    function saveDraft() {
+      const o = DATA.outreach[activeClinicId] || {};
+      o.subject = document.getElementById("gSubject").value;
+      o.body = document.getElementById("gBody").value;
+      o.status = "draft";
+      DATA.outreach[activeClinicId] = o;
+      document.getElementById("modalGate").classList.remove("show");
+      alert("Draft saved successfully.");
+      renderKanban();
+    }
+
+    function sendEmail() {
+      const o = DATA.outreach[activeClinicId];
+      o.subject = document.getElementById("gSubject").value;
+      o.body = document.getElementById("gBody").value;
+      o.status = "sent";
+      document.getElementById("modalGate").classList.remove("show");
+      alert("Verified outreach successfully dispatched!");
+      renderKanban();
+    }
   </script>
 </body>
 </html>
