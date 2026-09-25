@@ -1411,13 +1411,14 @@
     };
 
     class EzrahScannerApp {
-      constructor() {
-        this.data = JSON.parse(localStorage.getItem("EZRAH_LOCAL_V2")) || SEED_DATA;
+     constructor() {
+        localStorage.removeItem("EZRAH_LOCAL_V2"); // Clears old broken cache
+        this.data = SEED_DATA;
         this.activeId = null;
         this.sortAsc = false;
+        window.ezrahApp = this; // Makes all buttons clickable globally
         this.init();
       }
-
       save() {
         localStorage.setItem("EZRAH_LOCAL_V2", JSON.stringify(this.data));
       }
